@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  exo-gui-map:
+    container_name: exo-gui-map
+    build:
+      context: .
+      dockerfile: DockerFile
+    image: exo-gui-map:1.0
+    volumes: 
+      - './:/app'
+      - '/app/node_modules'
+    ports:
+      - '8180:8180'
+    command: "npm run start"
